@@ -1,0 +1,44 @@
+class CountVectorizer():
+    """ Класс для подсчета количества слов в предложении"""
+    def __init__(self):
+        self.vocabulary = {}
+
+    def fit_transform(self, corpus: list) -> list:
+        """Метод для подсчета слов в предложении"""
+        line_in_corpus = len(corpus)
+        words_in_corpus_orig = [corpus[line].split() for line in range(line_in_corpus)]
+
+        all_low_words_in_corpus = []
+        for line in range(len(words_in_corpus_orig)):
+            for words in range(len(words_in_corpus_orig[line])):
+                all_low_words_in_corpus.append(words_in_corpus_orig[line][words].lower())
+
+        dict_words = list(dict.fromkeys(all_low_words_in_corpus))
+        self.vocabulary = dict_words
+
+        all_low_words_in_line = [
+            [words_in_corpus_orig[line][words].lower()
+             for words in range(len(words_in_corpus_orig[line]))] for line in range(line_in_corpus)]
+
+        counter = []
+        for line in range(len(all_low_words_in_line)):
+            dict_counter = dict((k, 0) for k in dict_words)
+            for word in all_low_words_in_line[line]:
+                dict_counter[word] += 1
+            counter.append(list(dict_counter.values()))
+        return counter
+
+    def get_feature_names(self):
+        "Метод возвращает уникальный список слов в corpus"
+        return self.vocabulary
+
+corpus = [
+ 'Crock Pot Pasta Never boil pasta again',
+ 'Pasta Pomodoro Fresh ingredients Parmesan to taste'
+]
+
+vectorizer = CountVectorizer()
+count_matrix = vectorizer.fit_transform(corpus)
+
+print(vectorizer.get_feature_names())
+print(count_matrix)
