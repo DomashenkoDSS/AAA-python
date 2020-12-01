@@ -1,0 +1,13 @@
+Дана функция, кодирующая строку в соответсвии с таблицей азбуки Морзе
+
+# полный код в файле morse.py
+def encode(message: str) -> str:
+    """
+    Кодирует строку в соответсвии с таблицей азбуки Морзе
+    """
+    encoded_signs = [
+        LETTER_TO_MORSE[letter] for letter in message
+    ]
+
+    return ' '.join(encoded_signs)
+Напишите на неё тесты с использование doctest
