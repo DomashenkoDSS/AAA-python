@@ -1,0 +1,9 @@
+(homework) C:\Users\SOFYA\AAA\Python\HW\homework>python one_hot_encoder_unittest.py -v
+test_empty_element (__main__.Test_one_hot_encoder) ... ok
+test_entry_elements (__main__.Test_one_hot_encoder) ... ok
+test_many_text_elements (__main__.Test_one_hot_encoder) ... ok
+test_number_element (__main__.Test_one_hot_encoder) ... ok
+test_one_text_element (__main__.Test_one_hot_encoder) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
