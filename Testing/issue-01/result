@@ -1,0 +1,43 @@
+Trying:
+    encode('SOS')
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('SOS') # doctest: +NORMALIZE_WHITESPACE
+Expecting:
+    '...   ---
+    ...'
+ok
+Trying:
+    encode('ABCEF1'*4) # doctest: +ELLIPSIS
+Expecting:
+    '.- -... -.-. . ..-. .----....- -... -.-. . ..-. .----'
+ok
+Trying:
+    encode('12')
+Expecting:
+    '.---- ..---'
+ok
+Trying:
+    encode('Sos')  # doctest: +ELLIPSIS
+Expecting:
+    Traceback (most recent call last):
+    ...
+    KeyError: 'o'
+ok
+Trying:
+    encode(1) # doctest: +ELLIPSIS
+Expecting:
+    Traceback (most recent call last):
+    ...
+    TypeError: 'int' object is not iterable
+ok
+2 items had no tests:
+    morse_test_encode
+    morse_test_encode.decode
+1 items passed all tests:
+   6 tests in morse_test_encode.encode
+6 tests in 3 items.
+6 passed and 0 failed.
+Test passed.
