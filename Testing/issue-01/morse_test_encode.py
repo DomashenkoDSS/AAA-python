@@ -58,7 +58,3 @@ def encode(message: str) -> str:
     ]
 
     return ' '.join(encoded_signs)
-
-
-if __name__ == '__main__':
-    doctest.testmod()
