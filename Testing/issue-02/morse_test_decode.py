@@ -40,11 +40,7 @@ def decode(morse_message: str) -> str:
     ('... --- ...', 'SOS'),                         #1
     ('... .---- ..--..', 'S1?'),                    #2
     ('..... ..-.', '5F'),                           #3
-    ('.---- ..---', '1')                            #4
+    ('.---- ..---', '12')                            #4
 ])
 def test_decode(morse_message: str, exp: str):
     assert decode(morse_message) == exp
-
-
-if __name__ == "__main__":
-    pytest.main()
