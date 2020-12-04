@@ -28,6 +28,3 @@ class Test_one_hot_encoder(unittest.TestCase):
         actual = fit_transform(*element)
         expected = [('A', [0, 1]), ('b', [ 1, 0])]
         self.assertNotEqual(actual, expected)
-
-if __name__ == "__main__":
-    unittest.main()
